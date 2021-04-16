@@ -1,4 +1,4 @@
-const databese = require('../models')
+const database = require('../models')
 
 class PessoaController{
     static async pegaTodasAsPesoas(req, res){
