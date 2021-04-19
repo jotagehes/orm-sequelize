@@ -20,12 +20,12 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  { paranoid: true }
   Matriculas.init({
     status: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Matriculas',
+    paranoid: true,
   });
   return Matriculas;
 };

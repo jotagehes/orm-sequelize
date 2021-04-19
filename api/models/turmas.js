@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Turmas extends Model {
     /**
@@ -23,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   
-  { paranoid: true }
   Turmas.init({
     data_inicio: DataTypes.DATEONLY
   }, {
     sequelize,
     modelName: 'Turmas',
+    paranoid: true,
   });
   return Turmas;
 };

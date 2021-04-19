@@ -16,13 +16,13 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  { paranoid: true }
-
+  
   Niveis.init({
     descr_nivel: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Niveis',
+    paranoid: true,
   });
   return Niveis;
 };

@@ -16,11 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       Pessoas.hasMany(models.Matriculas, {
         foreignKey: 'estudante_id'
       })
-
+      
     }
   };
-  { paranoid: true }
-
+  
   Pessoas.init({
     nome: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN,
@@ -29,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Pessoas',
+    paranoid: true,
   });
   return Pessoas;
 };
