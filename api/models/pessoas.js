@@ -19,6 +19,8 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   };
+  { paranoid: true }
+
   Pessoas.init({
     nome: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN,

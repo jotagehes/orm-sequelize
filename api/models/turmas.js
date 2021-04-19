@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
+  
+  { paranoid: true }
   Turmas.init({
     data_inicio: DataTypes.DATEONLY
   }, {

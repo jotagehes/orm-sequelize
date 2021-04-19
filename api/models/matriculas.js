@@ -16,10 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       Matriculas.belongsTo(models.Turmas, {
         foreignKey: 'turma_id'
       })
-
+      
       // define association here
     }
   };
+  { paranoid: true }
   Matriculas.init({
     status: DataTypes.STRING
   }, {
