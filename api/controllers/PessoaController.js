@@ -6,7 +6,7 @@ const pessoasServices = new PessoasServices()
 class PessoaController {
     static async pegaPesoasAtivas(req, res) {
         try {
-            const pessoasAtivas = await pessoasServices.pegaTodosOsRegistros()
+            const pessoasAtivas = await pessoasServices.pegaRegistrosAtivos()
             return res.status(200).json(pessoasAtivas)
         } catch (error) {
             return res.status(500).json(error.message)
@@ -14,7 +14,7 @@ class PessoaController {
     }
     static async pegaTodasAsPesoas(req, res) {
         try {
-            const todasAsPessoas = await database.Pessoas.scope('todos').findAll()
+            const todasAsPessoas = await pessoasServices.pegaTodosOsRegistros()
             return res.status(200).json(todasAsPessoas)
         } catch (error) {
             return res.status(500).json(error.message)
